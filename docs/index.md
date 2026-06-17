@@ -4,15 +4,15 @@ layout: home
 
 hero:
   name: "Enhanced LRC Studio"
-  text: ".lrc動態歌詞編輯程式，同時可製作可匯出成.ass的KTV字幕"
-  tagline: My great project tagline
+  text: "lrc動態歌詞編輯程式"
+  tagline: ".lrc動態歌詞編輯程式，同時可製作可匯出成.ass的KTV字幕"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 下載
+      # link: /markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 線上網頁版
+      # link: /api-examples
 
 features:
   - title: Feature A
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
