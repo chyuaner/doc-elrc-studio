@@ -1,12 +1,15 @@
 ## 專案組成
 
-### web-elrc-studio
+### web-elrc-studio - 核心
 <https://github.com/chyuaner/web-elrc-studio>
 
-### electron-elrc-studio
+### electron-elrc-studio - 桌面視窗版
 <https://github.com/chyuaner/electron-elrc-studio>
 
-### doc-elrc-studio
+### capacitor-elrc-studio - Android版
+Android版
+
+### doc-elrc-studio - 本站說明頁面
 <https://github.com/chyuaner/doc-elrc-studio>
 
 ### tauri-elrc-maker <Badge type="info" text="已棄用" />

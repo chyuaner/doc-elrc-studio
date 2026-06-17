@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const sharedSidebar = [
   {
-    text: '專案特色',
+    text: '✨ 專案特色',
     items: [
       { text: '歌詞編輯器', link: '/features/editor' },
       { text: 'KTV ASS字幕', link: '/features/ktv' },
@@ -15,10 +15,11 @@ const sharedSidebar = [
       // { text: '擴充.lrc的標籤', link: '/use/tag' },
       {
         text: '擴充.lrc的標籤',
+        link: '/use/tag',
         items: [
-          { text: 'v1', link: '/use/tag/v1' },
-          { text: 'v2', link: '/use/tag/v2' },
-          { text: 'v3', link: '/use/tag/v3' },
+          { text: 'LRC 標準的 標籤系統', link: '/use/tag#lrc-%E6%A8%99%E6%BA%96%E7%9A%84-%E6%A8%99%E7%B1%A4%E7%B3%BB%E7%B5%B1-%E8%AA%AA%E6%98%8E' },
+          { text: 'KTV 專屬開源擴充', link: '/use/tag#ktv-%E5%B0%88%E5%B1%AC%E9%96%8B%E6%BA%90%E6%93%B4%E5%85%85-lrc-%E6%A8%99%E7%B1%A4%E7%B3%BB%E7%B5%B1-ktv-lrc-metadata-tags-%E7%9A%84%E8%AA%AA%E6%98%8E' },
+          { text: 'KTV 多角色演唱與色彩樣式控制', link: '/use/tag/character' },
         ]
       },
     ]
@@ -37,6 +38,10 @@ export default defineConfig({
       { text: '下載/線上版', link: '/download' },
       { text: '開發說明', link: '/dev' },
       { text: 'Youtube', link: 'http://www.youtube.com/@yunsongktv' },
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
 
     sidebar: {
@@ -76,9 +81,11 @@ export default defineConfig({
       ]
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ],
+    lastUpdated: true,
+
+    outline: {
+      label: '目錄'
+    },
 
     footer: {
       message: '本專案採用 GNU AGPL v3 授權',
