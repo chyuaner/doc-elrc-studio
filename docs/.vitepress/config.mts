@@ -9,7 +9,7 @@ const sharedSidebar = [
     ]
   },
   {
-    text: '使用說明',
+    text: '📖 使用說明',
     items: [
       { text: '步驟說明', link: '/use/step' },
       // { text: '擴充.lrc的標籤', link: '/use/tag' },
@@ -34,9 +34,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: '特色與使用說明', link: '/features/editor' },
+      { text: '特色與使用說明', link: '/features/editor', activeMatch: '/(use|features)/' },
       { text: '下載/線上版', link: '/download' },
-      { text: '開發說明', link: '/dev' },
+      { text: '開發說明', link: '/dev', activeMatch: '/dev/' },
       { text: 'Youtube', link: 'http://www.youtube.com/@yunsongktv' },
     ],
 
@@ -76,6 +76,22 @@ export default defineConfig({
               ]
             },
             { text: '線上版', link: '/download#線上版' },
+          ]
+        }
+      ],
+      '/dev': [
+        {
+          text: '📖 開發文件',
+          items: [
+            { text: '概覽', link: '/dev' },
+            {
+              text: 'Electron開發過程備忘',
+                items: [
+                  { text: '建立electron專案', link: '/dev/electron/init' },
+                  { text: '自動Build', link: '/dev/electron/github-action' },
+                  { text: '視窗化處理', link: '/dev/electron/window' },
+                ]
+            }
           ]
         }
       ]
