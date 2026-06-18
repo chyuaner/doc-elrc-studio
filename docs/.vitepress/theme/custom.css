@@ -43,6 +43,33 @@
   to { transform: translateY(0); }
 }
 
+/* Associate sidebar with a transition name */
+.VPSidebar {
+  view-transition-name: vp-sidebar;
+}
+
+/* Animations for sidebar entering (appearing) */
+::view-transition-new(vp-sidebar) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-left;
+  mix-blend-mode: normal;
+}
+
+/* Animations for sidebar leaving (disappearing) */
+::view-transition-old(vp-sidebar) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
+  mix-blend-mode: normal;
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-out-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
 html {
   scroll-behavior: smooth;
 }
