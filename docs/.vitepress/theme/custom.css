@@ -5,6 +5,21 @@
   mix-blend-mode: normal;
 }
 
+/* Associate the navbar with a transition name and keep it on top */
+.VPNavBar {
+  view-transition-name: vp-nav-bar;
+}
+
+::view-transition-group(vp-nav-bar) {
+  z-index: 100;
+}
+
+::view-transition-old(vp-nav-bar),
+::view-transition-new(vp-nav-bar) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 /* Associate the main content container with the transition name */
 #VPContent {
   view-transition-name: vp-content;
