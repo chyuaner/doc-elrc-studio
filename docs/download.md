@@ -7,6 +7,10 @@ next: false
 下載 Enhanced LRC Studio
 ===
 
+::: warning
+內容施工中
+:::
+
 ## 桌面視窗版
 ### Linux
 
