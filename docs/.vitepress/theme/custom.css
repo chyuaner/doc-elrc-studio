@@ -1,0 +1,53 @@
+/* Disable default cross-fade for root to keep header and sidebar static */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Associate the main content container with the transition name */
+#VPContent {
+  view-transition-name: vp-content;
+}
+
+/* Animations for the content transition */
+::view-transition-old(vp-content) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+             1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-down;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(vp-content) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+             1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-up;
+  mix-blend-mode: normal;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(0); }
+  to { transform: translateY(20px); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); }
+  to { transform: translateY(0); }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

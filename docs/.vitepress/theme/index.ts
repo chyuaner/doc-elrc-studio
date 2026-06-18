@@ -1,12 +1,42 @@
 import { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { watch, onMounted } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, useRouter } from 'vitepress'
+import './custom.css'
 
 export default {
   extends: DefaultTheme,
   setup() {
     const route = useRoute()
+    const router = useRouter()
+
+    if (typeof window !== 'undefined') {
+      let isTransitioning = false
+      const normalizePath = (path: string) => {
+        return decodeURIComponent(path.split('#')[0].split('?')[0])
+          .replace(/\/$/, '')
+          .replace(/\.html$/, '')
+      }
+      router.onBeforeRouteChange = (to) => {
+        if (isTransitioning) return true
+
+        if (normalizePath(to) === normalizePath(window.location.pathname)) {
+          return true
+        }
+
+        if ((document as any).startViewTransition) {
+          isTransitioning = true
+          ;(document as any).startViewTransition(async () => {
+            try {
+              await router.go(to)
+            } finally {
+              isTransitioning = false
+            }
+          })
+          return false
+        }
+      }
+    }
     
     const updateActiveSidebar = () => {
       setTimeout(() => {
