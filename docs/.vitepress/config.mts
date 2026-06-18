@@ -28,6 +28,7 @@ const sharedSidebar = [
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: process.env.BASE_PATH || '/',
   title: "Enhanced LRC Studio",
   description: ".lrc動態歌詞編輯程式，同時可製作可匯出成.ass的KTV字幕",
   themeConfig: {
