@@ -6,13 +6,17 @@ hero:
   name: "Enhanced LRC Studio"
   text: "lrc動態歌詞編輯程式"
   tagline: ".lrc動態歌詞編輯程式，同時可製作可匯出成.ass的KTV字幕"
+  image:
+    light: /main.png
+    dark: /main-dark.png
+    alt: elrc-studio
   actions:
     - theme: brand
       text: 下載
-      # link: /markdown-examples
+      link: /download
     - theme: alt
       text: 線上網頁版
-      # link: /api-examples
+      link: https://elrc-open.yuaner.tw
 
 features:
   - title: Feature A
