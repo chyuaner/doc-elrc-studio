@@ -9,6 +9,7 @@ export default {
   setup() {
     const route = useRoute()
     const router = useRouter()
+    let activeSidebarObserver: IntersectionObserver | null = null
 
     if (typeof window !== 'undefined') {
       let isTransitioning = false
@@ -26,19 +27,29 @@ export default {
 
         if ((document as any).startViewTransition) {
           isTransitioning = true
-          ;(document as any).startViewTransition(async () => {
+          const transition = (document as any).startViewTransition(async () => {
             try {
               await router.go(to)
             } finally {
               isTransitioning = false
             }
           })
+          if (transition && transition.finished) {
+            transition.finished.then(() => {
+              updateActiveSidebar()
+            })
+          }
           return false
         }
       }
     }
     
     const updateActiveSidebar = () => {
+      if (activeSidebarObserver) {
+        activeSidebarObserver.disconnect()
+        activeSidebarObserver = null
+      }
+
       setTimeout(() => {
         const sidebarLinks = document.querySelectorAll('.VPSidebarItem .VPLink')
         const currentPath = decodeURIComponent(window.location.pathname)
@@ -94,6 +105,8 @@ export default {
             }
           })
         }, observerOptions)
+
+        activeSidebarObserver = observer
 
         hashLinks.forEach(item => {
           if (item.target) observer.observe(item.target)
