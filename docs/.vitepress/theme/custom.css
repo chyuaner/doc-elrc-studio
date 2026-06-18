@@ -121,10 +121,9 @@ html {
   z-index: 9999;
 }
 
-.VPSwitchAppearance {
-  width: 22px !important;
-}
-
-.VPSwitchAppearance .check {
-  transform: none !important;
+/* Disable routing transitions when toggling dark mode */
+.theme-appearance-transition #VPContent,
+.theme-appearance-transition .VPSidebar,
+.theme-appearance-transition .VPNavBar {
+  view-transition-name: none !important;
 }

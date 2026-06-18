@@ -30,20 +30,26 @@ export default {
           )}px at ${x}px ${y}px)`
         ]
 
-        await (document as any).startViewTransition(async () => {
-          isDark.value = !isDark.value
-          await nextTick()
-        }).ready
+        document.documentElement.classList.add('theme-appearance-transition')
 
-        document.documentElement.animate(
-          { clipPath: isDark.value ? clipPath.reverse() : clipPath },
-          {
-            duration: 300,
-            easing: 'ease-in',
-            fill: 'forwards',
-            pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`
-          }
-        )
+        try {
+          await (document as any).startViewTransition(async () => {
+            isDark.value = !isDark.value
+            await nextTick()
+          }).ready
+
+          await document.documentElement.animate(
+            { clipPath: isDark.value ? clipPath.reverse() : clipPath },
+            {
+              duration: 300,
+              easing: 'ease-in',
+              fill: 'forwards',
+              pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`
+            }
+          ).finished
+        } finally {
+          document.documentElement.classList.remove('theme-appearance-transition')
+        }
       })
 
       let isTransitioning = false
