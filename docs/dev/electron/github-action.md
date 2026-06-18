@@ -1,5 +1,6 @@
-> [!WARNING]
-> 本文是AI生成，是在功能製作過程中時順便備份內容當作為來手動處理時參考用。
+::: warning
+本文是由AI生成，是在功能製作過程中時順便備份內容當作為來手動處理時參考用，我沒花心力為該頁手動校稿。
+:::
 
 
 已新增 [`.github/workflows/release.yml`](.github/workflows/release.yml)，並更新 README 說明。

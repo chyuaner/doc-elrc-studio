@@ -1,5 +1,6 @@
-> [!WARNING]
-> 本文是AI生成，是在功能製作過程中時順便備份內容當作為來手動處理時參考用。
+::: warning
+本文是由AI生成，是在功能製作過程中時順便備份內容當作為來手動處理時參考用，我沒花心力為該頁手動校稿。
+:::
 
 我正在嘗試理解你修改的東西。
 所以 @aistudio-elrc-maker/components/ElectronWindowControls.tsx 是直接由 aistudio-elrc-maker 由前端自己畫視窗三按鈕嗎？
