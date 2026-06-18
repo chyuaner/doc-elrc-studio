@@ -48,16 +48,25 @@
   view-transition-name: vp-sidebar;
 }
 
-/* Animations for sidebar entering (appearing) */
-::view-transition-new(vp-sidebar) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-left;
+/* Default transition: simple cross-fade when both pages have sidebars */
+::view-transition-old(vp-sidebar) {
+  animation: 1.0s ease both fade-out;
   mix-blend-mode: normal;
 }
 
-/* Animations for sidebar leaving (disappearing) */
-::view-transition-old(vp-sidebar) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
+::view-transition-new(vp-sidebar) {
+  animation: 1.0s ease both fade-in;
   mix-blend-mode: normal;
+}
+
+/* Slide-in transition when entering from a page with NO sidebar */
+.transition-sidebar-enter::view-transition-new(vp-sidebar) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-left;
+}
+
+/* Slide-out transition when leaving to a page with NO sidebar */
+.transition-sidebar-leave::view-transition-old(vp-sidebar) {
+  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
 }
 
 @keyframes slide-in-left {

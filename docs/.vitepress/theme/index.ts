@@ -27,15 +27,32 @@ export default {
 
         if ((document as any).startViewTransition) {
           isTransitioning = true
+
+          const hadSidebar = document.querySelector('.VPSidebar') !== null
+
           const transition = (document as any).startViewTransition(async () => {
             try {
               await router.go(to)
+
+              const hasSidebar = document.querySelector('.VPSidebar') !== null
+              if (hadSidebar && hasSidebar) {
+                document.documentElement.classList.add('transition-sidebar-fade')
+              } else if (hadSidebar && !hasSidebar) {
+                document.documentElement.classList.add('transition-sidebar-leave')
+              } else if (!hadSidebar && hasSidebar) {
+                document.documentElement.classList.add('transition-sidebar-enter')
+              }
             } finally {
               isTransitioning = false
             }
           })
           if (transition && transition.finished) {
             transition.finished.then(() => {
+              document.documentElement.classList.remove(
+                'transition-sidebar-fade',
+                'transition-sidebar-leave',
+                'transition-sidebar-enter'
+              )
               updateActiveSidebar()
             })
           }
