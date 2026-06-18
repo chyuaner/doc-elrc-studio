@@ -12,14 +12,14 @@
 
 /* Animations for the content transition */
 ::view-transition-old(vp-content) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
-             1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-down;
+  animation: 0.6s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+             0.6s cubic-bezier(0.4, 0, 0.2, 1) both slide-down;
   mix-blend-mode: normal;
 }
 
 ::view-transition-new(vp-content) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
-             1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-up;
+  animation: 0.6s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+             0.6s cubic-bezier(0.4, 0, 0.2, 1) both slide-up;
   mix-blend-mode: normal;
 }
 
@@ -50,23 +50,23 @@
 
 /* Default transition: simple cross-fade when both pages have sidebars */
 ::view-transition-old(vp-sidebar) {
-  animation: 1.0s ease both fade-out;
+  animation: 0.6s ease both fade-out;
   mix-blend-mode: normal;
 }
 
 ::view-transition-new(vp-sidebar) {
-  animation: 1.0s ease both fade-in;
+  animation: 0.6s ease both fade-in;
   mix-blend-mode: normal;
 }
 
 /* Slide-in transition when entering from a page with NO sidebar */
 .transition-sidebar-enter::view-transition-new(vp-sidebar) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-left;
+  animation: 0.6s cubic-bezier(0.4, 0, 0.2, 1) both slide-in-left;
 }
 
 /* Slide-out transition when leaving to a page with NO sidebar */
 .transition-sidebar-leave::view-transition-old(vp-sidebar) {
-  animation: 1.0s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
+  animation: 0.6s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-left;
 }
 
 @keyframes slide-in-left {
