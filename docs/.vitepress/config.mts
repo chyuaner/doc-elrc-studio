@@ -11,6 +11,7 @@ const sharedSidebar = [
   {
     text: '📖 使用說明',
     items: [
+      { text: '下載版與線上版的差異', link: '/use/different-app-web' },
       { text: '步驟說明', link: '/use/step' },
       // { text: '擴充.lrc的標籤', link: '/use/tag' },
       {
@@ -106,7 +107,7 @@ export default defineConfig({
 
     footer: {
       message: '本專案採用 GNU AGPL v3 授權',
-      copyright: 'Copyright © 2026-present Yuan Chiu'
+      copyright: 'Copyright © 2026-present <a href="https://yuaner.tw" target="_blank" rel="noopener noreferrer">Yuan Chiu</a>'
     }
   }
 })
