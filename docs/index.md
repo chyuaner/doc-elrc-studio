@@ -26,3 +26,20 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
+<style>
+/* 僅限首頁生效的 Hero 圖片大小微調 */
+.VPHero .image-src {
+  max-width: 500px; 
+  max-height: 500px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .VPHero .image-src {
+    max-width: 280px;
+    max-height: 280px;
+  }
+}
+</style>
