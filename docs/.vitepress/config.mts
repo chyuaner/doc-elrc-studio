@@ -4,7 +4,7 @@ const sharedSidebar = [
   {
     text: '✨ 專案特色',
     items: [
-      { text: '歌詞編輯器', link: '/features/editor' },
+      { text: '歌詞編輯器 <span class="VPBadge warning">施工中</span>', link: '/features/editor' },
       { text: 'KTV ASS字幕', link: '/features/ktv' },
     ]
   },
@@ -12,7 +12,7 @@ const sharedSidebar = [
     text: '📖 使用說明',
     items: [
       { text: '下載版與線上版的差異', link: '/use/different-app-web' },
-      { text: '步驟說明', link: '/use/step' },
+      { text: '步驟說明 <span class="VPBadge warning">施工中</span>', link: '/use/step' },
       // { text: '擴充.lrc的標籤', link: '/use/tag' },
       {
         text: '擴充.lrc的標籤',
@@ -67,7 +67,7 @@ export default defineConfig({
                 items: [
                   { text: 'Linux', link: '/download#linux' },
                   { text: 'Windows', link: '/download#windows' },
-                  { text: 'macOS', link: '/macos' },
+                  { text: 'macOS', link: '/download#macos' },
                 ]
             },
             {
