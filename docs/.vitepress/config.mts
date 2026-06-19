@@ -90,13 +90,13 @@ export default defineConfig({
               text: 'electron-elrc-studio',
                 items: [
                   { text: '概要', link: '/dev/electron/' },
-                  { text: '建立electron專案 <Badge type="info" text="AI生成文" />', link: '/dev/electron/init' },
-                  { text: '自動Build <Badge type="info" text="AI生成文" />', link: '/dev/electron/github-action' },
-                  { text: '視窗化處理 <Badge type="info" text="AI生成文" />', link: '/dev/electron/window' },
+                  { text: '建立electron專案 <span class="VPBadge info">AI文</span>', link: '/dev/electron/init' },
+                  { text: '自動Build <span class="VPBadge info">AI文</span>', link: '/dev/electron/github-action' },
+                  { text: '視窗化處理 <span class="VPBadge info">AI文</span>', link: '/dev/electron/window' },
                 ]
             },
             {
-              text: 'tauri-elrc-maker <Badge type="info" text="棄用" />',
+              text: 'tauri-elrc-maker <span class="VPBadge danger">棄用</span>',
                 items: [
                   { text: '概要', link: '/dev/tauri/' },
                 ]
