@@ -50,7 +50,7 @@ next: false
 ::: warning ⚠️ 瀏覽器功能限制
 線上網頁版主要為了**方便快速使用、臨時修改或跨平台體驗**而提供。
 
-由於瀏覽器的安全性沙盒限制，線上網頁版會受到部份功能限制，詳情請參考[桌面視窗版與Web線上網頁版有什麼不一樣](../use/different-app-web.md)。
+由於瀏覽器的安全性沙盒限制，線上網頁版會受到部份功能限制，詳情請參考[桌面視窗版與Web線上網頁版有什麼不一樣](./use/different-app-web.md)。
 
 
 為了獲得最完整、穩定的製作體驗與編輯效能，**強烈建議您優先下載並使用 [桌面視窗版](#桌面視窗版) 或是 [平板、手機APP版](#平板-手機版)**。
@@ -59,17 +59,20 @@ next: false
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const fallbackVersion = 'v1.2.0'
+const fallbackVersion = 'v1.4.0'
 const version = ref(fallbackVersion)
 
+const cleanVersion = fallbackVersion.replace(/^v/, '')
+
 const downloads = ref({
-  winSetup: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/Enhanced.LRC.Studio.Setup.1.2.0.exe',
-  winPortable: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/Enhanced.LRC.Studio.1.2.0.exe',
-  macDmg: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/Enhanced.LRC.Studio-1.2.0-arm64.dmg',
-  linuxAppImage: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/Enhanced.LRC.Studio-1.2.0.AppImage',
-  linuxDeb: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/electron-elrc-studio_1.2.0_amd64.deb',
-  linuxPacman: 'https://github.com/chyuaner/electron-elrc-studio/releases/download/v1.2.0/electron-elrc-studio-1.2.0.pacman'
+  winSetup: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/Enhanced.LRC.Studio.Setup.${cleanVersion}.exe`,
+  winPortable: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/Enhanced.LRC.Studio.${cleanVersion}.exe`,
+  macDmg: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/Enhanced.LRC.Studio-${cleanVersion}-arm64.dmg`,
+  linuxAppImage: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/Enhanced.LRC.Studio-${cleanVersion}.AppImage`,
+  linuxDeb: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/electron-elrc-studio_${cleanVersion}_amd64.deb`,
+  linuxPacman: `https://github.com/chyuaner/electron-elrc-studio/releases/download/${fallbackVersion}/electron-elrc-studio-${cleanVersion}.pacman`
 })
+
 
 onMounted(async () => {
   try {
