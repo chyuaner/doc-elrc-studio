@@ -85,13 +85,20 @@ export default defineConfig({
         {
           text: '📖 開發文件',
           items: [
-            { text: '概覽', link: '/dev' },
+            { text: '專案組成', link: '/dev/' },
             {
-              text: 'Electron開發過程備忘',
+              text: 'electron-elrc-studio',
                 items: [
-                  { text: '建立electron專案', link: '/dev/electron/init' },
-                  { text: '自動Build', link: '/dev/electron/github-action' },
-                  { text: '視窗化處理', link: '/dev/electron/window' },
+                  { text: '概要', link: '/dev/electron/' },
+                  { text: '建立electron專案 <Badge type="info" text="AI生成文" />', link: '/dev/electron/init' },
+                  { text: '自動Build <Badge type="info" text="AI生成文" />', link: '/dev/electron/github-action' },
+                  { text: '視窗化處理 <Badge type="info" text="AI生成文" />', link: '/dev/electron/window' },
+                ]
+            },
+            {
+              text: 'tauri-elrc-maker <Badge type="info" text="棄用" />',
+                items: [
+                  { text: '概要', link: '/dev/tauri/' },
                 ]
             }
           ]
